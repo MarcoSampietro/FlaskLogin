@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Welcome to the Homepage</h1>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="username" class="elemento">Username:</label>
-                <input type="text" id="username" placeholder="Enter your username" name="username" class="elemento form-control">
-            </div>
-            <div class="form-group">
-                <label for="password" class="elemento">Password:</label>
-                <input type="password" id="password" placeholder="Enter your password" name="password" class="elemento form-control">
-            </div>
-            <button type="submit" id="infoButton" class="btn btn-primary">Enter</button>
-        </form>
-        <div id="message"></div>
-    </div>
-    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the Homepage</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username" class="elemento">Username:</label>
+                    <input type="text" id="username" placeholder="Enter your username" name="username" class="elemento form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password" class="elemento">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your password" name="password" class="elemento form-control">
+                </div>
+                <button type="submit" id="infoButton" class="btn btn-primary">Enter</button>
+            </form>
+            <div id="message"></div>
+        </div>
+        <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    </body>
 </html>

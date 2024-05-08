@@ -3,11 +3,15 @@ import pandas as pd
 
 app = Flask(__name__)
 
-df = pd.read_csv("/workspace/flaskLogin/data/users.csv")
-
 def authenticate_user(username, password):
+    df = pd.read_csv("/workspace/flaskLogin/data/users.csv")
+    print(df)
     user = df[(df['username'] == username) & (df['password'] == password)]
-    return len(user) > 0
+    print(user)
+    if len(user) > 0:
+        return True
+    else:
+        return False
 
 @app.route('/')
 def homepage():
@@ -17,7 +21,7 @@ def homepage():
 def information():
     username = request.form.get('username')
     password = request.form.get('password')
-
+    print(username, password)
     if authenticate_user(username, password):
         return jsonify({'message': 'Login successful'})
     else:

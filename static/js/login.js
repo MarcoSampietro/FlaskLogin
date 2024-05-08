@@ -3,7 +3,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     
     let formData = new FormData(this);
 
-    fetch('/elenco', {
+    fetch('https://3245-marcosampiet-flasklogin-kfwjlqg5ant.ws-eu111.gitpod.io/elenco', {
         method: 'POST',
         body: formData
     })
@@ -12,12 +12,14 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         console.log(data);
         if (data.message === 'Login successful') {
             document.getElementById('message').innerHTML = '<p>Login successful!</p>';
+            document.getElementById('loginForm').reset();
             document.getElementById('loginForm').style.display = 'none';
         } else {
             document.getElementById('message').innerHTML = '<p>Invalid username or password</p>';
         }
     })
     .catch(error => {
-        console.error('Error:', error);
+        console.error('Error:', error.message);
+        document.getElementById('message').innerHTML = '<p>An error occurred, please try again later</p>';
     });
 });
